@@ -9,8 +9,14 @@ angular.module('ngLocalStore', [])
         var getItem = function(key){
             return JSON.parse(localStorage.getItem(key));
         }
+        
+        var removeItem = function (key) {
+            return localStorage.removeItem(key);
+        }
+
         return {
             set: setItem,
-            get: getItem
+            get: getItem,
+            remove: removeItem
         }
     }]);
